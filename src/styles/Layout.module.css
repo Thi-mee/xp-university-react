@@ -1,0 +1,26 @@
+/* A nice grid style for the children nav, header, sidebar & footer */
+.PageLayout {
+  display: grid;
+  grid-template-columns: 14rem 3fr;
+  grid-template-rows: 6rem 3fr 6rem;
+  grid-template-areas:
+    "sidebar nav"
+    "sidebar main"
+    "sidebar footer";
+  height: 100vh;
+}
+.PageLayout > main {
+  grid-area: main;
+}
+.PageLayout > nav {
+  grid-area: nav;
+}
+.PageLayout > footer {
+  grid-area: footer;
+}
+.PageLayout aside {
+  grid-area: sidebar;
+  padding-inline: 1rem;
+  background-image: linear-gradient(130deg, #5185df, #403ee6);
+  color: #fff;
+}
