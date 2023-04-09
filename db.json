@@ -1,0 +1,202 @@
+{
+    "faculties" : [
+      {
+        "FacultyId": 13,
+        "Name": "Disciplism",
+        "UniqueId": "Dcps      ",
+        "Code": "DSC05     ",
+        "Status": 0
+      },
+      {
+        "FacultyId": 1,
+        "Name": "Engineering",
+        "UniqueId": "EEGn      ",
+        "Code": "05        ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 33,
+        "Name": "Faculty of Education",
+        "UniqueId": "201EDUC   ",
+        "Code": "EDU2023   ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 15,
+        "Name": "Faculty of JS",
+        "UniqueId": "FJS       ",
+        "Code": "034       ",
+        "Status": 0
+      },
+      {
+        "FacultyId": 30,
+        "Name": "Faculty of Martial Arts",
+        "UniqueId": "Fma7      ",
+        "Code": "075       ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 32,
+        "Name": "Faculty Of Tech",
+        "UniqueId": "Tech      ",
+        "Code": "00006     ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 3,
+        "Name": "Law",
+        "UniqueId": "DLAW2023  ",
+        "Code": "1234r     ",
+        "Status": 0
+      },
+      {
+        "FacultyId": 6,
+        "Name": "Management Sciences",
+        "UniqueId": "MGSC      ",
+        "Code": "04        ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 17,
+        "Name": "Medicine",
+        "UniqueId": "MDC       ",
+        "Code": "123       ",
+        "Status": 1
+      },
+      {
+        "FacultyId": 34,
+        "Name": "Swordmanship",
+        "UniqueId": "Spdma     ",
+        "Code": "Smsp      ",
+        "Status": 1
+      }
+    ],
+    "departments" : [
+      {
+        "DepartmentId": 1,
+        "Name": "Electrical Engineering",
+        "FacultyId": 30,
+        "UniqueId": "EEG       ",
+        "Code": "037       ",
+        "Status": 0
+      },
+      {
+        "DepartmentId": 2,
+        "Name": "Computer Engineering",
+        "FacultyId": 1,
+        "UniqueId": "CPE       ",
+        "Code": "05        ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 4,
+        "Name": "Accounting",
+        "FacultyId": 6,
+        "UniqueId": "ACCg      ",
+        "Code": "05        ",
+        "Status": 0
+      },
+      {
+        "DepartmentId": 5,
+        "Name": "Insurance",
+        "FacultyId": 6,
+        "UniqueId": "Insu      ",
+        "Code": "06        ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 6,
+        "Name": "Criminal law",
+        "FacultyId": 3,
+        "UniqueId": "CRLW      ",
+        "Code": "021       ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 8,
+        "Name": "Closures and Scopes",
+        "FacultyId": 15,
+        "UniqueId": "CANDS     ",
+        "Code": "111       ",
+        "Status": 0
+      },
+      {
+        "DepartmentId": 10,
+        "Name": "Persecution",
+        "FacultyId": 13,
+        "UniqueId": "PSCt      ",
+        "Code": "016       ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 15,
+        "Name": "Nursing",
+        "FacultyId": 17,
+        "UniqueId": "NRS       ",
+        "Code": "03        ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 17,
+        "Name": "Marketing",
+        "FacultyId": 1,
+        "UniqueId": "Bluhuu    ",
+        "Code": "101       ",
+        "Status": 1
+      },
+      {
+        "DepartmentId": 19,
+        "Name": "Banking and Finance",
+        "FacultyId": 6,
+        "UniqueId": "201FIN    ",
+        "Code": "FIN2023   ",
+        "Status": 0
+      }
+    ],
+    "courses": [
+      {
+        "CourseId": 14,
+        "DepartmentId": 1,
+        "Name": "Business Algebra",
+        "Code": "FBA101    ",
+        "UniqueId": "201FBA    ",
+        "Units": 2,
+        "CourseLevel": 200,
+        "CourseSemester": 1,
+        "Status": 1
+      },
+      {
+        "CourseId": 13,
+        "DepartmentId": 2,
+        "Name": "Engineering Maths",
+        "Code": "EMA2023   ",
+        "UniqueId": "201EMA    ",
+        "Units": 3,
+        "CourseLevel": 200,
+        "CourseSemester": 1,
+        "Status": 1
+      },
+      {
+        "CourseId": 1,
+        "DepartmentId": 1,
+        "Name": "International Human Relations",
+        "Code": "IRP2023   ",
+        "UniqueId": "201IRP    ",
+        "Units": 3,
+        "CourseLevel": 100,
+        "CourseSemester": 1,
+        "Status": 0
+      },
+      {
+        "CourseId": 6,
+        "DepartmentId": 8,
+        "Name": "Power Transmission I",
+        "Code": "EEG321    ",
+        "UniqueId": "pwrtg     ",
+        "Units": 3,
+        "CourseLevel": 200,
+        "CourseSemester": 2,
+        "Status": 0
+      }
+    ]
+}
