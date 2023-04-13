@@ -3,7 +3,7 @@ import { Accordion } from "react-bootstrap";
 import AccordionItem from "./AccordionItem";
 import { Link } from "react-router-dom";
 import { FaLaughWink } from "react-icons/fa";
-import style from "../../../styles/SideBar.module.css";
+import style from "../../../../styles/SideBar.module.css";
 
 function SideBar() {
   return (

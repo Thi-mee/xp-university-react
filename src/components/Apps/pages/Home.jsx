@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Apps/shared/Layout";
+import Layout from "./shared/Layout";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 

@@ -11,8 +11,7 @@ import {
   faList,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import undrawProfile from "../../../Assets/profile-image.svg";
-import { logout } from "../../../services/Apps/AuthService";
+import { logout } from "../../../../services/Apps/AuthService";
 
 function TopBar() {
   const handleLogout = () => {
@@ -157,7 +156,7 @@ function TopBar() {
               <div className="dropdown-list-image mr-3">
                 <img
                   className="rounded-circle"
-                  src={undrawProfile}
+                  src="https://static-00.iconduck.com/assets.00/profile-pic-illustration-512x512-slyqduy6.png"
                   alt="profile"
                 />
                 <div className="status-indicator bg-success"></div>

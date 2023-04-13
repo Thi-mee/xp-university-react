@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from './shared/Layout'
 
 function Course() {
   return (
-    <div>Course</div>
+    <Layout>Course</Layout>
   )
 }
 

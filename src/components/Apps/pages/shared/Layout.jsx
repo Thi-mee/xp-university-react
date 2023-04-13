@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import Footer from "./Footer";
-import style from "../../../styles/Layout.module.css";
+import style from "../../../../styles/Layout.module.css";
 
 function Layout({ children }) {
   return (
