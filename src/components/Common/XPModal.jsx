@@ -10,21 +10,21 @@ export const useXPModal = () => {
   return { isShown, toggle };
 };
 
-function XPModal(props) {
+function XPModal({ title, isShown, onClose, children }) {
   return (
-    <Modal show={props.isShown} onHide={props.onClose}>
+    <Modal show={isShown} onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{props.title}</Modal.Title>
+        <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{props.content}</Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={props.onClose}>
+      <Modal.Body>{children}</Modal.Body>
+      {/* <Modal.Footer>
+        <Button variant="secondary" onClick={onClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={props.onSave}>
+        <Button variant="primary" onClick={onSave}>
           Save Changes
         </Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 }

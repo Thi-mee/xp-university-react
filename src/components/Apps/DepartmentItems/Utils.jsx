@@ -8,9 +8,8 @@ export const formDef = {
   facultyId: 0,
   code: "",
   uniqueId: "",
-  isActive: true,
+  isActive: false,
 };
-
 
 export const getGridHeader = () => {
   return (
@@ -26,22 +25,31 @@ export const getGridHeader = () => {
   );
 };
 
-export const getGridData = ({ departments, faculties, onRequestUpdate, onDeptChanged }) => {
-  console.log("faculties", faculties);
-  console.log("departments", departments);
+export const getGridData = ({
+  departments,
+  faculties,
+  onRequestUpdate,
+  onDeptChanged,
+}) => {
   return departments.map((department, index) => {
     const faculty = faculties.find((f) => f.id === department.facultyId);
-    return <tr key={index}>
-      <td>{index + 1}</td>
-      <td>{department.name}</td>
-      <td>{faculty.name}</td>
-      <td>{department.code}</td>
-      <td>{department.uniqueId}</td>
-      <td>{department.isActive ? "Active" : "In-Active"}</td>
-      <td>
-        <EditButton onClick={() => onRequestUpdate(department)} />
-        <DeleteButton onClick={() => onDeptChanged(department, XPCrudType.Delete)} />
-      </td>
-    </tr>
+    console.log(faculty.name);
+    return (
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{department.name}</td>
+        <td>{faculty.name}</td>
+        <td>{department.code}</td>
+        <td>{department.uniqueId}</td>
+        <td>{department.isActive ? "Active" : "In-Active"}</td>
+        <td>
+          <EditButton onClick={() => onRequestUpdate(department)} />
+          {"  "}
+          <DeleteButton
+            onClick={() => onDeptChanged(department, XPCrudType.Delete)}
+          />
+        </td>
+      </tr>
+    );
   });
 };

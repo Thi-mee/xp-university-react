@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import AddButton from "../../Common/AddButton";
-import XPModal, { useXPModal } from "../../Common/XPModal";
 import { Table } from "react-bootstrap";
-import { getAllFaculties } from "../../../services/Apps/FacultyService";
+import XPModal, { useXPModal } from "../../Common/XPModal";
 import {
   getAllDepartments,
   updateDepartments,
 } from "../../../services/Apps/DepartmentService";
-import { getGridData, getGridHeader, formDef } from "./Utils";
-import DepartmentForm, { useXPForm } from "./DepartmentForm";
-import {
-  XPAlertObj,
-  XPConfirmAlert,
-  XPInfoAlert,
-} from "../../../Utils/Common/Utils/xpAlerts";
+import { getAllFaculties } from "../../../services/Apps/FacultyService";
+import { formDef, getGridData, getGridHeader } from "./Utils";
+import DepartmentForm, { useDepartmentForm } from "./DepartmentForm";
+
 import {
   XPAlertIcon,
   XPAlertType,
   XPCrudType,
 } from "../../../Utils/Common/Enums/alertEnums";
-
-const faculties = getAllFaculties();
+import {
+  XPAlertObj,
+  XPConfirmAlert,
+  XPInfoAlert,
+} from "../../../Utils/Common/Utils/xpAlerts";
 
 function DepartmentGrid() {
   const [departments, setDepartments] = useState(getAllDepartments);
+  const facultiesRef = useRef(getAllFaculties());
   const [formTitle, setFormTitle] = useState("");
   const { isShown, toggle: onToggleModal } = useXPModal();
   const {
     form,
     handleValueChange,
-    errors,
+    formErrors: errors,
     initForm,
     validateForm,
     setFormErrors,
-  } = useXPForm({ formObj: formDef });
+  } = useDepartmentForm({ formObj: formDef, departments });
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -42,13 +42,15 @@ function DepartmentGrid() {
 
     //ValidateInputs
     const errors = validateForm();
+    console.log(errors)
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return false;
     }
-
+    
     if (form.id > 0) {
       //Update
+      console.log("Bout to go update stuff mehn")
       onDeptChanged(form, XPCrudType.Update);
       alertObj.message = "Department Was Updated Suuccessfully";
       alertObj.title = "Department Updated";
@@ -56,6 +58,7 @@ function DepartmentGrid() {
       XPInfoAlert(alertObj);
     } else {
       //Add
+      console.log("Bout to go add shit up")
       form.stat_id = departments.length + 1;
       onDeptChanged(form, XPCrudType.Add);
       alertObj.message = "Department Was Added Suuccessfully";
@@ -92,9 +95,9 @@ function DepartmentGrid() {
     onToggleModal();
   };
 
-  const onRequestUpdate = (faculty) => {
+  const onRequestUpdate = (dept) => {
     //initialize form
-    initForm(faculty);
+    initForm(dept);
     setFormTitle("Update Department");
     //show modal
     onToggleModal();
@@ -103,13 +106,13 @@ function DepartmentGrid() {
   return (
     <>
       <div className="d-flex justify-content-between mb-2">
-        <h1 className="h3 mb-0 text-gray-800">Faculties</h1>
-        <AddButton onClick={onRequestAdd}>New Faculty</AddButton>
+        <h1 className="h3 mb-0 text-gray-800">Departments</h1>
+        <AddButton onClick={onRequestAdd}>New Department</AddButton>
       </div>
       <Table striped bordered hover>
         <thead>{getGridHeader()}</thead>
         <tbody>
-          {getGridData({ departments, faculties, onRequestUpdate, onDeptChanged })}
+          {getGridData({ departments, faculties: facultiesRef.current, onRequestUpdate, onDeptChanged })}
         </tbody>
       </Table>
       <XPModal
@@ -122,7 +125,7 @@ function DepartmentGrid() {
             form={form}
             handleValueChange={handleValueChange}
             errors={errors}
-            faculties={faculties}
+            faculties={facultiesRef.current}
           />
         }
       />
