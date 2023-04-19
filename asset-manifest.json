@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/xp-university-react/static/css/main.50094905.css",
+    "main.js": "/xp-university-react/static/js/main.086f7f85.js",
+    "index.html": "/xp-university-react/index.html",
+    "main.50094905.css.map": "/xp-university-react/static/css/main.50094905.css.map",
+    "main.086f7f85.js.map": "/xp-university-react/static/js/main.086f7f85.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50094905.css",
+    "static/js/main.086f7f85.js"
+  ]
+}
