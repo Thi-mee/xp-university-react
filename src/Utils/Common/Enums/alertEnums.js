@@ -94,6 +94,6 @@ export class XPCrudType {
   }
 
   toString() {
-    return `Color.${this.name}`;
+    return `${this.name}`;
   }
 }

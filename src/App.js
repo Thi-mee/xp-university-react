@@ -1,8 +1,11 @@
-import AppRoutes from './routes/AppRoutes';
+import Layout from './components/Apps/pages/shared/Layout';
+import AppRoutes from './components/Apps/routes/AppRoutes';
 
 function App() {
   return (
-    <AppRoutes />
+    <Layout>
+      <AppRoutes />
+    </Layout>
   );
 }
 

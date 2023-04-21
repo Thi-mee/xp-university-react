@@ -1,11 +1,11 @@
-import Layout from "./shared/Layout";
-import DepartmentGrid from '../DepartmentItems/DepartmentGrid'
+import DepartmentProvider from "../DepartmentItems/DepartmentProvider";
+import DepartmentGrid from "../DepartmentItems/DepartmentGrid";
 
 function Department() {
   return (
-    <Layout>
+    <DepartmentProvider>
       <DepartmentGrid />
-    </Layout>
+    </DepartmentProvider>
   );
 }
 

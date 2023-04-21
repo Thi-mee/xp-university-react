@@ -1,10 +1,12 @@
-import React from 'react'
-import Layout from './shared/Layout'
+import CourseGrid from "../CourseItems/CourseGrid";
+import CourseProvider from "../CourseItems/CourseProvider";
 
-function Course() {
+const Course = () => {
   return (
-    <Layout>Course</Layout>
-  )
-}
+    <CourseProvider>
+      <CourseGrid />
+    </CourseProvider>
+  );
+};
 
-export default Course
+export default Course;

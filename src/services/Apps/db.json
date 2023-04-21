@@ -3,71 +3,50 @@
     {
       "id": 13,
       "name": "Disciplism",
-      "uniqueId": "Dcps      ",
-      "code": "DSC05     ",
+      "uniqueId": "Dcps",
+      "code": "DSC05",
       "isActive": false
     },
     {
       "id": 1,
       "name": "Engineering",
-      "uniqueId": "EEGn      ",
-      "code": "05        ",
+      "uniqueId": "EEGn",
+      "code": "05",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "name": "Business Admin",
+      "uniqueId": "BAdm",
+      "code": "0984",
       "isActive": true
     },
     {
       "id": 33,
       "name": "Faculty of Education",
-      "uniqueId": "201EDUC   ",
-      "code": "EDU2023   ",
+      "uniqueId": "201EDUC",
+      "code": "EDU2023",
       "isActive": true
     },
     {
       "id": 15,
       "name": "Faculty of JS",
-      "uniqueId": "FJS       ",
-      "code": "034       ",
+      "uniqueId": "FJS",
+      "code": "034",
       "isActive": false
     },
     {
       "id": 30,
       "name": "Faculty of Martial Arts",
-      "uniqueId": "Fma7      ",
-      "code": "075       ",
+      "uniqueId": "Fma7",
+      "code": "075",
       "isActive": true
     },
     {
       "id": 32,
       "name": "Faculty Of Tech",
-      "uniqueId": "Tech      ",
-      "code": "00006     ",
-      "isActive": true
-    },
-    {
-      "id": 3,
-      "name": "Law",
-      "uniqueId": "DLAW2023  ",
-      "code": "1234r     ",
-      "isActive": false
-    },
-    {
-      "id": 6,
-      "name": "Management Sciences",
-      "uniqueId": "MGSC      ",
-      "code": "04        ",
-      "isActive": true
-    },
-    {
-      "id": 17,
-      "name": "Medicine",
-      "uniqueId": "MDC       ",
-      "code": "123       ",
-      "isActive": true
-    },
-    {
-      "id": 34,
-      "name": "Swordmanship",
-      "uniqueId": "Spdma     ",
-      "code": "Smsp      ",
+      "uniqueId": "Tech",
+      "code": "00006",
       "isActive": true
     }
   ],
@@ -76,80 +55,64 @@
       "id": 1,
       "name": "Electrical Engineering",
       "facultyId": 30,
-      "uniqueId": "EEG       ",
-      "code": "037       ",
+      "uniqueId": "EEG",
+      "code": "037",
       "isActive": false
     },
     {
       "id": 2,
       "name": "Computer Engineering",
       "facultyId": 1,
-      "uniqueId": "CPE       ",
-      "code": "05        ",
+      "uniqueId": "CPE",
+      "code": "05",
       "isActive": true
     },
     {
       "id": 4,
       "name": "Accounting",
       "facultyId": 6,
-      "uniqueId": "ACCg      ",
-      "code": "05        ",
+      "uniqueId": "ACCg",
+      "code": "059",
       "isActive": false
     },
     {
       "id": 5,
       "name": "Insurance",
       "facultyId": 6,
-      "uniqueId": "Insu      ",
-      "code": "06        ",
-      "isActive": true
-    },
-    {
-      "id": 6,
-      "name": "Criminal law",
-      "facultyId": 3,
-      "uniqueId": "CRLW      ",
-      "code": "021       ",
+      "uniqueId": "Insu",
+      "code": "06",
       "isActive": true
     },
     {
       "id": 8,
       "name": "Closures and Scopes",
       "facultyId": 15,
-      "uniqueId": "CANDS     ",
-      "code": "111       ",
+      "uniqueId": "CANDS",
+      "code": "111",
       "isActive": false
     },
     {
       "id": 10,
       "name": "Persecution",
       "facultyId": 13,
-      "uniqueId": "PSCt      ",
-      "code": "016       ",
-      "isActive": true
-    },
-    {
-      "id": 15,
-      "name": "Nursing",
-      "facultyId": 17,
-      "uniqueId": "NRS       ",
-      "code": "03        ",
+      "uniqueId": "PSCt",
+      "code": "016",
       "isActive": true
     },
     {
       "id": 17,
       "name": "Marketing",
       "facultyId": 1,
-      "uniqueId": "Bluhuu    ",
-      "code": "101       ",
+      "uniqueId": "Bluhuu",
+      "code": "101",
       "isActive": true
     },
     {
       "id": 19,
       "name": "Banking and Finance",
       "facultyId": 6,
-      "uniqueId": "201FIN    ",
-      "code": "FIN2023   ",
+      "uniqueId": "201FIN",
+      "code": "FIN2023",
       "isActive": false
     }
   ],
@@ -158,44 +121,132 @@
       "id": 14,
       "departmentId": 1,
       "name": "Business Algebra",
-      "code": "FBA101    ",
-      "uniqueId": "201FBA    ",
-      "Units": 2,
-      "CourseLevel": 200,
-      "CourseSemester": 1,
+      "code": "FBA101",
+      "uniqueId": "201FBA",
+      "units": 2,
+      "level": 200,
+      "semester": 1,
       "isActive": true
     },
     {
       "id": 13,
       "departmentId": 2,
       "name": "Engineering Maths",
-      "code": "EMA2023   ",
-      "uniqueId": "201EMA    ",
-      "Units": 3,
-      "CourseLevel": 200,
-      "CourseSemester": 1,
+      "code": "EMA2023",
+      "uniqueId": "201EMA",
+      "units": 3,
+      "level": 200,
+      "semester": 1,
       "isActive": true
     },
     {
       "id": 1,
       "departmentId": 1,
       "name": "International Human Relations",
-      "code": "IRP2023   ",
-      "uniqueId": "201IRP    ",
-      "Units": 3,
-      "CourseLevel": 100,
-      "CourseSemester": 1,
+      "code": "IRP2023",
+      "uniqueId": "201IRP",
+      "units": 3,
+      "level": 100,
+      "semester": 1,
       "isActive": false
     },
     {
       "id": 6,
       "departmentId": 8,
       "name": "Power Transmission I",
-      "code": "EEG321    ",
-      "uniqueId": "pwrtg     ",
-      "Units": 3,
-      "CourseLevel": 200,
-      "CourseSemester": 2,
+      "code": "EEG321",
+      "uniqueId": "pwrtg",
+      "units": 3,
+      "level": 200,
+      "semester": 2,
+      "isActive": false
+    }
+  ],
+  "coursesOfStudy": [
+    {
+      "id": 3,
+      "departmentId": 2,
+      "name": "Computer Engineering",
+      "shortName": "CPE",
+      "uniqueId": "cmpc",
+      "award": "B.SC. (Honors) Computer Engineering",
+      "duration": 5,
+      "requiredCreditUnits": 125,
+      "advisor": "Engr. Tunji",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "departmentId": 17,
+      "name": "Criminal Rationality",
+      "shortName": "CRA",
+      "uniqueId": "201CR",
+      "award": "BSc in Criminal Rationality(PHD)",
+      "duration": 4,
+      "requiredCreditUnits": 50,
+      "advisor": "Mr. Kitano Ken",
+      "isActive": false
+    },
+    {
+      "id": 1,
+      "departmentId": 1,
+      "name": "Electrical and Electronics Engineering",
+      "shortName": "ElectElect",
+      "uniqueId": "elctel",
+      "award": "B.SC. (Honors) Electrical and Electronics Engineering",
+      "duration": 4,
+      "requiredCreditUnits": 134,
+      "advisor": "Mr Makinde",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "departmentId": 1,
+      "name": "Power Electronics",
+      "shortName": "CPE",
+      "uniqueId": "shegeBanza",
+      "award": "B.SC. (Honors) Computer Engineering",
+      "duration": 5,
+      "requiredCreditUnits": 225,
+      "advisor": "Engr. Tunji",
+      "isActive": false
+    }
+  ],
+  "lecturers": [
+    {
+      "id": 4,
+      "departmentId": 2,
+      "surname": "Ijeh",
+      "firstName": "Michael",
+      "otherName": "playboy",
+      "staffId": "ashjk     ",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "departmentId": 1,
+      "surname": "Ibiam",
+      "firstName": "G.O.A.T",
+      "otherName": "Akachukwu",
+      "staffId": "CEN234    ",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "departmentId": 5,
+      "surname": "Igbaro",
+      "firstName": "Taiwo",
+      "otherName": "Paul",
+      "staffId": "CRI2092   ",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "departmentId": 8,
+      "surname": "Adenuga",
+      "firstName": "Timilehin",
+      "otherName": "Adebola",
+      "staffId": "CRI345    ",
       "isActive": false
     }
   ]

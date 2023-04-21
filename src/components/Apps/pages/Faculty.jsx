@@ -1,11 +1,12 @@
-import Layout from "./shared/Layout";
 import FacultyGrid from "../FacultyItems/FacultyGrid";
+import FacultyProvider from "../FacultyItems/FacultyProvider";
 
-function Faculty() {
+const Faculty = () => {
+  
   return (
-    <Layout>
-      <FacultyGrid />
-    </Layout>
+    <FacultyProvider>
+      <FacultyGrid/>
+    </FacultyProvider>
   );
 }
 

@@ -43,11 +43,14 @@ function SideBar() {
           eventKey="0"
           header="Setup"
           body={[
-            { name: "Faculties", path: "/faculty" },
-            { name: "Departments", path: "/department" },
-            { name: "Courses", path: "/course" },
-            { name: "CoursesOfStudy", path: "/courseOfStudy" },
-            { name: "Lecturers", path: "/lecturer" },
+            { name: "Faculties", path: "/xp-university-react/faculty" },
+            { name: "Departments", path: "/xp-university-react/department" },
+            { name: "Courses", path: "/xp-university-react/course" },
+            {
+              name: "CoursesOfStudy",
+              path: "/xp-university-react/course-of-study",
+            },
+            { name: "Lecturers", path: "/xp-university-react/lecturer" },
           ]}
         />
         <AccordionItem
@@ -57,7 +60,7 @@ function SideBar() {
             { name: "Faculties", path: "/faculty" },
             { name: "Departments", path: "/department" },
             { name: "Courses", path: "/course" },
-            { name: "CoursesOfStudy", path: "/courseOfStudy" },
+            { name: "Courses Of Study", path: "/course-of-study" },
             { name: "Lecturers", path: "/lecturer" },
           ]}
         />
