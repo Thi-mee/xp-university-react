@@ -1,4 +1,3 @@
-import React from "react";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import Footer from "./Footer";
@@ -15,4 +14,4 @@ function Layout({ children }) {
   );
 }
 
-export default Layout;
+export default (Layout);

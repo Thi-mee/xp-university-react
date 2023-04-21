@@ -1,9 +1,5 @@
-import { useContext } from "react";
-import {
-  getAllFaculties,
-  updateFaculties,
-} from "../../../services/Apps/FacultyService";
-import { Table } from "react-bootstrap";
+import { memo } from "react";
+import { Alert, Table } from "react-bootstrap";
 import EditButton from "../../Common/EditButton";
 import DeleteButton from "../../Common/DeleteButton";
 import {
@@ -15,7 +11,11 @@ import {
   XPAlertObj,
   XPConfirmAlert,
 } from "../../../Utils/Common/Utils/xpAlerts";
-import { FacultyContext } from "../pages/Faculty";
+import {
+  useFacultyContext,
+  useFacultyDispatchContext,
+} from "./FacultyProvider";
+import { ActionObject } from "../../../Utils/Common/Utils/xpReducer";
 
 const header = (
   <tr>
@@ -47,7 +47,8 @@ const getTableData = ({ faculties, onRequestModal, onDeleteClick }) => {
 };
 
 const FacultyTable = ({ onRequestModal }) => {
-  const [ faculties, setFaculties ] = useContext(FacultyContext);
+  const { faculties, prevUpdateSuccess } = useFacultyContext();
+  const dispatch = useFacultyDispatchContext();
 
   const onDeleteClick = (faculty) => {
     const alertObj = XPAlertObj();
@@ -59,19 +60,28 @@ const FacultyTable = ({ onRequestModal }) => {
   };
 
   const processDelete = (faculty) => {
-    updateFaculties(faculty, XPCrudType.Delete);
-    setFaculties(getAllFaculties());
+    const actionObject = new ActionObject(
+      XPCrudType.Delete.toString(),
+      faculty,
+      "faculties"
+    );
+    dispatch(actionObject);
   };
 
   return (
-    <Table striped bordered hover>
-      <thead>{header}</thead>
-      <tbody>
-        {console.log("faculties Table rendered")}
-        {getTableData({ faculties, onRequestModal, onDeleteClick })}
-      </tbody>
-    </Table>
+    <>
+      {!prevUpdateSuccess && <Alert variant="danger">
+        Duplicate Entry Detected
+      </Alert>}
+
+      <Table striped bordered hover>
+        <thead>{header}</thead>
+        <tbody>
+          {getTableData({ faculties, onRequestModal, onDeleteClick })}
+        </tbody>
+      </Table>
+    </>
   );
 };
 
-export default FacultyTable;
+export default memo(FacultyTable);

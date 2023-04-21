@@ -1,12 +1,13 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, memo,  } from "react";
 
 export const useXPModal = () => {
   const [isShown, setIsShown] = useState(false);
 
-  const toggle = () => setIsShown(!isShown);
-
+  const toggle = () => {
+   setIsShown(!isShown);
+  };
   return { isShown, toggle };
 };
 
@@ -29,4 +30,4 @@ function XPModal({ title, isShown, onClose, children }) {
   );
 }
 
-export default XPModal;
+export default memo(XPModal);

@@ -1,26 +1,30 @@
-import { useRef, useState, useContext } from "react";
+import { useState, useCallback } from "react";
 import { Button, Form } from "react-bootstrap";
 import ErrorAlert from "../../Common/ErrorAlert";
-import { formDef } from "./Utils";
 import { XPAlertObj, XPInfoAlert } from "../../../Utils/Common/Utils/xpAlerts";
 import {
   XPAlertIcon,
   XPAlertType,
   XPCrudType,
 } from "../../../Utils/Common/Enums/alertEnums";
-import {
-  getAllFaculties,
-  isFacultyDuplicate,
-  updateFaculties,
-} from "../../../services/Apps/FacultyService";
-import { FacultyContext } from "../pages/Faculty";
+import { useFacultyContext, useFacultyDispatchContext } from "./FacultyProvider";
+import { ActionObject, isDuplicate } from "../../../Utils/Common/Utils/xpReducer";
+
+
+export const formDef = {
+  id: 0,
+  name: "",
+  code: "",
+  uniqueId: "",
+  isActive: false,
+};
 
 export const useFacultyForm = ({ formObj }) => {
   const [form, setForm] = useState(formObj);
   const [formErrors, setFormErrors] = useState({});
-  const topErrorRef = useRef(null);
+  const [dupError, setDupError] = useState("");
 
-  const handleValueChange = (e) => {
+  const handleValueChange = useCallback((e) => {
     const { name, value } = e.target;
     if (e.target.type === "checkbox") {
       setForm({ ...form, [name]: e.target.checked });
@@ -31,11 +35,7 @@ export const useFacultyForm = ({ formObj }) => {
     if (formErrors[name]) {
       setFormErrors({ ...formErrors, [name]: null });
     }
-    // if (name === topErrorRef.current) {
-    //   topErrorRef.current = null;
-    //   setFormErrors({ ...formErrors, top: null });
-    // }
-  };
+  }, [form, formErrors]);
 
   const validateForm = () => {
     const errors = {};
@@ -75,6 +75,7 @@ export const useFacultyForm = ({ formObj }) => {
   const initForm = (form) => {
     setForm(form);
     setFormErrors({});
+    setDupError('')
   };
 
   return {
@@ -83,19 +84,24 @@ export const useFacultyForm = ({ formObj }) => {
     formErrors,
     validateForm,
     initForm,
+    dupError,
+    setDupError
   };
 };
 
 function FacultyForm({ onToggleModal, formObj }) {
-  const [dupError, setDupError] = useState("");
-  const [ faculties, setFaculties ] = useContext(FacultyContext);
+  const {faculties} = useFacultyContext()
+  const dispatch = useFacultyDispatchContext()
   const {
     form,
     handleValueChange,
     formErrors: errors,
     validateForm,
     initForm,
+    dupError,
+    setDupError
   } = useFacultyForm({ formObj });
+
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -104,7 +110,7 @@ function FacultyForm({ onToggleModal, formObj }) {
 
     //ValidateInputs
     if (!validateForm()) return false;
-    const retVal = isFacultyDuplicate(form);
+    const retVal = isDuplicate(faculties, form);
     if (retVal.status) {
       setDupError(retVal.error);
       return false;
@@ -112,16 +118,16 @@ function FacultyForm({ onToggleModal, formObj }) {
 
     if (form.id > 0) {
       //Update
-      updateFaculties(form, XPCrudType.Update);
-      setFaculties(getAllFaculties());
+      const actionObject = new ActionObject(XPCrudType.Update.toString(), form, "faculties")
+      dispatch(actionObject)
       alertObj.message = "Faculty Was Updated Suuccessfully";
       alertObj.title = "Faculty Updated";
       alertObj.callback = onToggleModal;
       XPInfoAlert(alertObj);
     } else {
       //Add
-      updateFaculties(form, XPCrudType.Add);
-      setFaculties(getAllFaculties());
+      const actionObject = new ActionObject(XPCrudType.Add.toString(), form, "faculties")
+      dispatch(actionObject);
       alertObj.message = "Faculty Was Added Suuccessfully";
       alertObj.title = "Faculty Added";
       XPInfoAlert(alertObj);
@@ -139,7 +145,6 @@ function FacultyForm({ onToggleModal, formObj }) {
         value={form.id}
         onChange={handleValueChange}
       />
-      {console.log("FacultyForm rendered")}
       <Form.Group controlId="Name">
         <Form.Label>Faculty Name</Form.Label>
         <Form.Control
@@ -196,4 +201,9 @@ function FacultyForm({ onToggleModal, formObj }) {
   );
 }
 
+
+
 export default FacultyForm;
+
+
+

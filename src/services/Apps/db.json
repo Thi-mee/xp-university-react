@@ -15,6 +15,13 @@
       "isActive": true
     },
     {
+      "id": 6,
+      "name": "Business Admin",
+      "uniqueId": "BAdm",
+      "code": "0984",
+      "isActive": true
+    },
+    {
       "id": 33,
       "name": "Faculty of Education",
       "uniqueId": "201EDUC",
@@ -77,14 +84,6 @@
       "isActive": true
     },
     {
-      "id": 6,
-      "name": "Criminal law",
-      "facultyId": 3,
-      "uniqueId": "CRLW",
-      "code": "021",
-      "isActive": true
-    },
-    {
       "id": 8,
       "name": "Closures and Scopes",
       "facultyId": 15,
@@ -98,14 +97,6 @@
       "facultyId": 13,
       "uniqueId": "PSCt",
       "code": "016",
-      "isActive": true
-    },
-    {
-      "id": 15,
-      "name": "Nursing",
-      "facultyId": 17,
-      "uniqueId": "NRS",
-      "code": "03",
       "isActive": true
     },
     {
@@ -132,9 +123,9 @@
       "name": "Business Algebra",
       "code": "FBA101",
       "uniqueId": "201FBA",
-      "Units": 2,
-      "CourseLevel": 200,
-      "CourseSemester": 1,
+      "units": 2,
+      "level": 200,
+      "semester": 1,
       "isActive": true
     },
     {
@@ -143,9 +134,9 @@
       "name": "Engineering Maths",
       "code": "EMA2023",
       "uniqueId": "201EMA",
-      "Units": 3,
-      "CourseLevel": 200,
-      "CourseSemester": 1,
+      "units": 3,
+      "level": 200,
+      "semester": 1,
       "isActive": true
     },
     {
@@ -154,9 +145,9 @@
       "name": "International Human Relations",
       "code": "IRP2023",
       "uniqueId": "201IRP",
-      "Units": 3,
-      "CourseLevel": 100,
-      "CourseSemester": 1,
+      "units": 3,
+      "level": 100,
+      "semester": 1,
       "isActive": false
     },
     {
@@ -165,9 +156,97 @@
       "name": "Power Transmission I",
       "code": "EEG321",
       "uniqueId": "pwrtg",
-      "Units": 3,
-      "CourseLevel": 200,
-      "CourseSemester": 2,
+      "units": 3,
+      "level": 200,
+      "semester": 2,
+      "isActive": false
+    }
+  ],
+  "coursesOfStudy": [
+    {
+      "id": 3,
+      "departmentId": 2,
+      "name": "Computer Engineering",
+      "shortName": "CPE",
+      "uniqueId": "cmpc",
+      "award": "B.SC. (Honors) Computer Engineering",
+      "duration": 5,
+      "requiredCreditUnits": 125,
+      "advisor": "Engr. Tunji",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "departmentId": 17,
+      "name": "Criminal Rationality",
+      "shortName": "CRA",
+      "uniqueId": "201CR",
+      "award": "BSc in Criminal Rationality(PHD)",
+      "duration": 4,
+      "requiredCreditUnits": 50,
+      "advisor": "Mr. Kitano Ken",
+      "isActive": false
+    },
+    {
+      "id": 1,
+      "departmentId": 1,
+      "name": "Electrical and Electronics Engineering",
+      "shortName": "ElectElect",
+      "uniqueId": "elctel",
+      "award": "B.SC. (Honors) Electrical and Electronics Engineering",
+      "duration": 4,
+      "requiredCreditUnits": 134,
+      "advisor": "Mr Makinde",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "departmentId": 1,
+      "name": "Power Electronics",
+      "shortName": "CPE",
+      "uniqueId": "shegeBanza",
+      "award": "B.SC. (Honors) Computer Engineering",
+      "duration": 5,
+      "requiredCreditUnits": 225,
+      "advisor": "Engr. Tunji",
+      "isActive": false
+    }
+  ],
+  "lecturers": [
+    {
+      "id": 4,
+      "departmentId": 2,
+      "surname": "Ijeh",
+      "firstName": "Michael",
+      "otherName": "playboy",
+      "staffId": "ashjk     ",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "departmentId": 1,
+      "surname": "Ibiam",
+      "firstName": "G.O.A.T",
+      "otherName": "Akachukwu",
+      "staffId": "CEN234    ",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "departmentId": 5,
+      "surname": "Igbaro",
+      "firstName": "Taiwo",
+      "otherName": "Paul",
+      "staffId": "CRI2092   ",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "departmentId": 8,
+      "surname": "Adenuga",
+      "firstName": "Timilehin",
+      "otherName": "Adebola",
+      "staffId": "CRI345    ",
       "isActive": false
     }
   ]

@@ -1,21 +1,21 @@
-import { useState, memo } from "react";
+import { useState } from "react";
 import Header from "../shared/Header";
 import XPModal, { useXPModal } from "../../Common/XPModal";
-import DepartmentForm, { formDef } from "./DepartmentForm";
-import DepartmentTable from "./DepartmentTable";
+import CourseForm, { formDef } from "./CourseForm";
+import CourseTable from "./CourseTable";
 
-function DepartmentGrid() {
+const CourseGrid = () => {
   const { isShown, toggle: toggleModal } = useXPModal();
   const [formState, setFormState] = useState({
     formObj: formDef,
     title: "",
   });
 
-  const onRequestModal = (department) => {
-    if (!!department) {
-      setFormState({ formObj: department, title: "Update Department" });
+  const onRequestModal = (courseObj) => {
+    if (!!courseObj) {
+      setFormState({ formObj: courseObj, title: "Update Course" });
     } else {
-      setFormState({ formObj: formDef, title: "Add Department" });
+      setFormState({ formObj: formDef, title: "Add Course" });
     }
     toggleModal(true);
   };
@@ -23,19 +23,19 @@ function DepartmentGrid() {
   return (
     <>
       <XPModal isShown={isShown} title={formState.title} onClose={toggleModal}>
-        <DepartmentForm
+        <CourseForm
           onToggleModal={toggleModal}
           formObj={formState.formObj}
         />
       </XPModal>
       <Header
-        title="Departments"
-        buttonText="Add Department"
+        title="Courses"
+        buttonText="Add Course"
         onRequestAdd={onRequestModal}
       />
-      <DepartmentTable onRequestModal={onRequestModal} />
+      <CourseTable onRequestModal={onRequestModal} />
     </>
   );
-}
+};
 
-export default memo(DepartmentGrid);
+export default CourseGrid;
